@@ -1,0 +1,66 @@
+#login {
+  background-image: url('../imgs/login.png');
+  background-size: 100% 105%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#login .test {
+  color: white;
+}
+#login .login-box {
+  position: relative;
+  width: 350px;
+  height: 500px;
+}
+#login .login-main {
+  position: absolute;
+  width: 350px;
+  height: 500px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #ececec;
+  opacity: 0.8;
+}
+#login .login-main-l {
+  position: absolute;
+  width: 350px;
+  height: 500px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #ececec;
+  opacity: 0.8;
+  z-index: 2;
+  background-color: white;
+}
+#login .login-main-l h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 12px;
+}
+#login .login-main-r {
+  position: absolute;
+  width: 350px;
+  height: 500px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #ececec;
+  opacity: 0.8;
+  z-index: 1;
+  background-color: white;
+  display: none;
+}
+@keyframes myselect {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+@keyframes noselect {
+  from {
+    left: 200px;
+  }
+  to {
+    left: 25px;
+  }
+}
