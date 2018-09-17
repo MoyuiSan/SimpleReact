@@ -38,10 +38,10 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
-                    loader: 'babel-loader',
+                    loader: 'babel-loader?presets[]=react,presets[]=es2015,presets[]=stage-0',
                     options: {
-                        cacheDirectory: "true",
-                        presets: ['env', 'react']
+                        cacheDirectory: "true",                 
+                        presets: ['env', 'react','es2015','stage-0']
                     }
                 }
             }, {

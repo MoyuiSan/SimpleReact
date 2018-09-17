@@ -20,7 +20,8 @@
   height: 500px;
   border-radius: 5px;
   box-shadow: 0px 0px 5px #ececec;
-  opacity: 0.8;
+  perspective: 500;
+  animation-fill-mode: forwards;
 }
 #login .login-main-l {
   position: absolute;
@@ -28,12 +29,13 @@
   height: 500px;
   border-radius: 5px;
   box-shadow: 0px 0px 5px #ececec;
-  opacity: 0.8;
+  perspective: 500;
+  animation-fill-mode: forwards;
   z-index: 2;
   background-color: white;
 }
 #login .login-main-l h3 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   margin-top: 12px;
 }
@@ -43,24 +45,29 @@
   height: 500px;
   border-radius: 5px;
   box-shadow: 0px 0px 5px #ececec;
-  opacity: 0.8;
+  perspective: 500;
+  animation-fill-mode: forwards;
   z-index: 1;
   background-color: white;
-  display: none;
+  transform: rotateY(90deg);
 }
-@keyframes myselect {
+@keyframes fiselect {
   from {
-    opacity: 0.2;
+    transform: rotateY(0deg);
+    z-index: 2;
   }
   to {
-    opacity: 0.8;
+    transform: rotateY(180deg);
+    z-index: 1;
   }
 }
-@keyframes noselect {
+@keyframes seselect {
   from {
-    left: 200px;
+    transform: rotateY(-180deg);
+    z-index: 1;
   }
   to {
-    left: 25px;
+    transform: rotateY(0deg);
+    z-index: 2;
   }
 }
