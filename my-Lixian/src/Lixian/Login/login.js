@@ -7,7 +7,8 @@ class login extends Component {
         super(props)
         this.state = {
             userName: '',
-            passWord: ''
+            passWord: '',
+            show: false
         }
         this.emitEmpty = this.emitEmpty.bind(this)
         this.onChangeUserName = this.onChangeUserName.bind(this)
@@ -17,16 +18,18 @@ class login extends Component {
     componentDidMount() {
         const height = window.innerHeight
         $('#login').css('height', height)
+        console.log($('.testBox').outerHeight())
+        console.log($("p").add(document.getElementById("a")))
     }
     qie = () => {
-        $('.login-main-l').css('animation', 'fiselect 1s linear ');
-        $('.login-main-r').css('animation', 'seselect 1s linear ');
+        $('.login-main-l').css('animation', 'fiselect 1.25s linear 0s');
+        $('.login-main-r').css('animation', 'seselect 1.25s linear 0s');
         $('.login-main-l').css('animation-fill-mode', 'forwards');
         $('.login-main-r').css('animation-fill-mode', 'forwards');
     }
     qie1 = () => {
-        $('.login-main-l').css('animation', 'seselect 1s linear ');
-        $('.login-main-r').css('animation', 'fiselect 1s linear ');
+        $('.login-main-l').css('animation', 'seselect 1.25s linear 0s');
+        $('.login-main-r').css('animation', 'fiselect 1.25s linear 0s');
         $('.login-main-l').css('animation-fill-mode', 'forwards');
         $('.login-main-r').css('animation-fill-mode', 'forwards');
     }
@@ -51,7 +54,7 @@ class login extends Component {
         const suffixl = passWord ? <Icon type="close-circle" onClick={this.emitEmpty2} /> : null;
         return (
             <div id='login'>
-                <div className='login-box'>
+                {this.state.show ? <div className='login-box'>
                     <div className="login-main-l">
                         <h3><Icon style={{ marginLeft: 10 }} type="environment" theme="outlined" />登录</h3>
                         <hr></hr>
@@ -76,12 +79,17 @@ class login extends Component {
                             style={{ width: 250, marginLeft: 50, marginTop: 15 }}
                             type='password'
                         />
-                        <span className="goRisgter" onClick={this.qie}>前往注册</span>
+                        <span className="goRigister" onClick={this.qie}>前往注册</span>
                     </div>
-                    <div className="login-main-r"}>
-                        <span className="goRisgter" onClick={this.qie1}>前往登录</span>
+                    <div className="login-main-r">
+                        <h3><Icon style={{ marginLeft: 10 }} type="environment" theme="outlined" />注册</h3>
+                        <hr></hr>
+                        <span className="goLogin" onClick={this.qie1}>前往登录</span>
                     </div>
-                </div>
+                </div> : null}
+                {!this.state.show ? <div className='testBox'>
+                    <p>Hello</p><p><span id="a">Hello Again</span></p>
+                </div> : null}
 
             </div>
         )

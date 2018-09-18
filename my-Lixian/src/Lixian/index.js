@@ -1,3 +1,4 @@
+import 'babel-polyfill'
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
@@ -16,13 +17,13 @@ if (module.hot) {
         ReactDOM.render(
             <Provider store={store}>
 
-                    <BrowserRouter>
-                        <AppContainer>
-                            {/* <App /> */}
-                            <App />
-                        </AppContainer>
-                    </BrowserRouter>
-          
+                <BrowserRouter>
+                    <AppContainer>
+                        {/* <App /> */}
+                        <App />
+                    </AppContainer>
+                </BrowserRouter>
+
                 {/* </LocaleProvider> */}
             </Provider>,
             document.getElementById('root')
@@ -31,14 +32,14 @@ if (module.hot) {
 }
 ReactDOM.render(
     <Provider store={store}>
-    
-            <BrowserRouter>
-                <AppContainer>
-                    {/* <App/> */}
-                    <App />
-                </AppContainer>
-            </BrowserRouter>
-  
+
+        <BrowserRouter>
+            <AppContainer>
+                {/* <App/> */}
+                <App />
+            </AppContainer>
+        </BrowserRouter>
+
         {/* </LocaleProvider> */}
     </Provider>,
     document.getElementById('root')
