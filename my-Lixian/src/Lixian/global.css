@@ -1,0 +1,7 @@
+@font-face {
+  font-family: mySaoUi;
+  src: url('SAOUIRegular.ttf');
+}
+* {
+  font-family: mySaoUi;
+}

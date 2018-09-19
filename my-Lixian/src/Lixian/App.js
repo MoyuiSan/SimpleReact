@@ -3,6 +3,7 @@ import Counter from './index/Counter'
 import Login from './Login/login'
 import {Button} from 'antd'
 import axios from 'axios'
+import './global.less'
 class App extends Component {
     constructor(props) {
         super(props)
