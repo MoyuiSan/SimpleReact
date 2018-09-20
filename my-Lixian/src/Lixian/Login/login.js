@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import '../Login/login.less'
 import $ from 'jquery'
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Link, Route } from 'react-router-dom'
+import Counter from '../index/Counter'
 class login extends Component {
     constructor(props) {
         super(props)
@@ -44,14 +46,18 @@ class login extends Component {
         //         $('.testBox').css('animation-fill-mode', 'forwards')
         //     }
         // })
-        let _this = this
-        $(".iron-1").click(function () {
-            _this.setState({
-                show: false
-            })
+    }
+    isAlert = () => {
+        alert('11')
+    }
+    goLogin = () => {
+        this.setState({
+            show: false
         })
-
-
+    }
+    isLogin = () => {
+        this.props.isLogin()
+        alert('来了来了！')
     }
     qie = () => {
         $('.login-main-l').css('animation', 'fiselect 1.25s linear 0s');
@@ -80,11 +86,11 @@ class login extends Component {
         this.setState({ passWord: e.target.value });
     }
     render() {
-        const { userName } = this.state;
-        const { passWord } = this.state;
-        const suffix = userName ? <Icon type="close-circle" onClick={this.emitEmpty} /> : null;
-        const suffixl = passWord ? <Icon type="close-circle" onClick={this.emitEmpty2} /> : null;
-        const FormItem = Form.Item;
+        const { userName } = this.state
+        const { passWord } = this.state
+        const suffix = userName ? <Icon type="close-circle" onClick={this.emitEmpty} /> : null
+        const suffixl = passWord ? <Icon type="close-circle" onClick={this.emitEmpty2} /> : null
+        const FormItem = Form.Item
         return (
             <div id='login'>
                 {this.state.show ? <div className='login-box'>
@@ -120,7 +126,7 @@ class login extends Component {
                             <a className="login-form-forgot" href="">Forgot password</a>
                         </FormItem>
                         <div className="contral-icon">
-                            <div className="iron-1"></div>
+                            <div className="iron-1" onClick={this.goLogin}></div>
                             <div className="iron-2"></div>
                         </div>
                     </div>
@@ -129,10 +135,9 @@ class login extends Component {
                         <hr></hr>
                         <span className="goLogin" onClick={this.qie1}>前往登录</span>
                     </div>
-                </div> : <div className='testBox' style={{textAlign:"center"}}>
-                        马上进入一个神奇的世界！1~2~3~4~5~
+                </div> : <div className='testBox' style={{ textAlign: "center" }}>
+                        <a onClick={this.isLogin}>点击进入一个神奇的世界！1~2~3~4~5~</a>
                     </div>}
-
             </div>
         )
     }
