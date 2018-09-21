@@ -29,7 +29,7 @@ class App extends Component {
                 {/* <Counter></Counter> */}
                 <div>{this.state.name}</div>
                 {/* <Button type="primary" onClick={this.mysearch}>Primary</Button> */}
-                {!goindex ? <Login isLogin={this.goIndex}></Login> : <Index></Index>}
+                {goindex ? <Login isLogin={this.goIndex}></Login> : <Index></Index>}
             </div>
         )
     }

@@ -3,12 +3,16 @@
   height: 100px;
   display: flex;
   align-items: center;
+  background-color: rgba(194, 194, 194, 0.048);
+  box-shadow: 0px 0px 8px #aaaaaa;
 }
 #header-sao .user-logo {
   width: 60px;
   height: 60px;
   background-color: white;
   margin-left: 25px;
+  background-image: url('../../imgs/kirito.png');
+  background-size: 100% 100%;
 }
 #header-sao .user-hp {
   position: relative;

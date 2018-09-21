@@ -40,8 +40,8 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        cacheDirectory: "true",                 
-                        presets: ['env', 'react','es2015','stage-0']
+                        cacheDirectory: "true",
+                        presets: ['env', 'react', 'es2015', 'stage-0']
                     }
                 }
             }, {
